@@ -217,7 +217,7 @@ layout = dbc.Card([
                     dbc.Row([
                         dbc.Col([
                                 dbc.Label("Descrição: "),
-                                dbc.Input(placeholder="Ex.: mercado, restaurante...", id="txt-despesa"),
+                                dbc.Input(placeholder="Ex.: dividendos da bolsa, herança...", id="txt-despesa"),
                         ], width=6), 
                         dbc.Col([
                                 dbc.Label("Valor: "),
