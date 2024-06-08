@@ -17,6 +17,7 @@ card_icon ={
     "margin": "auto",
 }
 
+graph_margin = dic(l=25, r=25, t=25, b=0)
 
 # =========  Layout  =========== #
 layout = dbc.Col([
@@ -116,3 +117,63 @@ layout = dbc.Col([
 
 
 # =========  Callbacks  =========== #
+@app.callback([Output("dropdown-receita", "options"),
+               Output("dropdown-receita", "value"),
+               Output("p-receita-dashboards", "children")],
+               Input("store-receitas", "data"))
+def populate_dropdownvalues(data):
+    df = pd.DataFrame(data)
+    valor = df['Valor'].sum()
+    val = df.Categoria.unique().tolist()
+
+    return ([{"label": x, "value": x} for x in val], val, f"R$ {valor}")
+
+
+@app.callback([Output("dropdown-despesa", "options"),
+               Output("dropdown-despesa", "value"),
+               Output("p-despesa-dashboards", "children")],
+               Input("store-despesas", "data"))
+def populate_dropdownvalues(data):
+    df = pd.DataFrame(data)
+    valor = df['Valor'].sum()
+    val = df.Categoria.unique().tolist()
+
+    return ([{"label": x, "value": x} for x in val], val, f"R$ {valor}")
+
+@app.callback(
+    Output("p-saldo-dashboards", "children"),
+    [Input("store-despesas", "data"),
+    Input("store-receitas", "data")])
+def saldo_total(despesas, receitas):
+    df_despesas = pd.DataFrame(despesas)
+    df_despesas = pd.DataFrame(receitas)
+
+    valor = df_receitas['Valor'].sum() - df_despesas['Valor'].sum()
+
+    return f"R$ {valor}"
+
+@app.callback(
+    Output('graph1', 'figure'),
+    [Input('store-despesas', 'data'),
+     Input('store-receitas', 'data'),
+     Input("dropdown-despesa", "value"),
+     Input("dropdown-receita", "value"),]
+)
+def update_output(data_despesa, data_receita, despesa, receita):
+    
+    df_despesas = pd.DataFrame(data_despesa).set_index("Data")[["Valor"]]
+    df_ds = df_despesas.groupby("Data").sum().rename(columns={"Valor": "Despesa"})
+
+    df_receitas = pd.DataFrame(data_receita).set_index("Data")[["Valor"]]
+    df_rc = df_receitas.groupby("Data").sum().rename(columns={"Valor": "Receita"})
+
+    df_acum = df_ds.join(df_rc, how="outer").fillna(0)
+    df_acum["Acum"] = df_acum["Receita"] - df_acum["Despesa"] 
+    df_acum["Acum"] = df_acum["Acum"].cumsum()
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(name="Fluxo de caixa", x=df_acum.index, y=df_acum["Acum"], mod="lines"))
+
+    fig.update_layout(margin=graph_margin, height=400)
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+    return fig 
