@@ -61,6 +61,10 @@ Depois que o aplicativo estiver em execução, você poderá interagor com ele e
 > - Em caso de bugs sensíveis, como vulnerabilidades de segurança, entre em contato
 feer.rodriguess90@gmail.com diretamente em vez de usar o rastreador de problemas.
 
+## Contribuições
+- Contribuições e feedback são bem-vindos! Sinta-se à vontade para enviar solicitações pull ou levantar opções se tiver alguma sugestão de melhoria.
+
+
 ### Obrigada por visitar. Siga para mais projetos como esse!  
 ### Happy Coding! ✨
 
