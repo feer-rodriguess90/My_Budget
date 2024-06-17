@@ -19,5 +19,57 @@ Utilizando apenas **PYTHON** e as bibliotecas:
 > - Plotly
 > - Pandas
 
+## 🖥 Como usar 
+**1. Clone o repositório:**
+```
+git clone https://github.com/feer-rodriguess90/My_Budget.git
+```
+
+**2. Instale as dependências:**
+```
+pip install -r requirements.txt
+```
+
+**3. Comando para rodar a aplicação:**
+```
+python myindex.py
+```
+
+**4. Interagindo com a aplicação** <br>
+Depois que o aplicativo estiver em execução, você poderá interagor com ele e suas funcionalidades. 
+
+### > Página Inicial 
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/PaginaInicial.png)
+
+### > Página Extratos 
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/PaginaExtratos.png)
+
+### > Selecionar perfil ou criar um novo perfil 
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/SelecionarPerfil.png)
+
+### > Adicionar Receita
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/AdicionarReceita.png)
+
+### > Adicionar Despesa 
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/AdicionarDespesas.png)
+
+### > Escolher Tema
+![image](https://github.com/feer-rodriguess90/My_Budget/blob/main/MyBudget/estrutura_inicial/Images/EscolherTema.png)
+
+## Notas Adicionais
+> [!IMPORTANT]
+> - Em caso de bugs sensíveis, como vulnerabilidades de segurança, entre em contato
+feer.rodriguess90@gmail.com diretamente em vez de usar o rastreador de problemas.
+
+### Obrigada por visitar. Siga para mais projetos como esse!  
+### Happy Coding! ✨
+
+
+
+
+
+
+
+
 
 
