@@ -66,7 +66,14 @@ feer.rodriguess90@gmail.com diretamente em vez de usar o rastreador de problemas
 
 
 ### Obrigada por visitar. Siga para mais projetos como esse!  
-### Happy Coding! ✨
+### Happy coding! 👩🏽‍💻 
+Let's connect! <br/>
+[![linkedin](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/datavizwithfer/) 
+[![medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@DataVizWithFer)
+
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+</div>
 
 
 
